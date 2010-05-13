@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite failures="0" time="0.034" errors="0" skipped="0" tests="1" name="com.devender.AppTest">
+  <properties>
+    <property name="java.vendor" value="Sun Microsystems Inc."/>
+    <property name="env.SESSION_MANAGER" value="local/devender-laptop:@/tmp/.ICE-unix/5203,unix/devender-laptop:/tmp/.ICE-unix/5203"/>
+    <property name="env.LESSOPEN" value="| /usr/bin/lesspipe %s"/>
+    <property name="localRepository" value="/home/devender/.m2/repository"/>
+    <property name="env.ORACLE_HOME" value="/oracle/10g"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.management.compiler" value="HotSpot Tiered Compilers"/>
+    <property name="env.PROMPT_COMMAND" value=": &amp;&amp; (autojump -a &quot;$(pwd -P)&quot;&amp;)&gt;/dev/null"/>
+    <property name="os.name" value="Linux"/>
+    <property name="sun.boot.class.path" value="/usr/lib/jvm/java-6-sun-1.6.0.20/jre/lib/resources.jar:/usr/lib/jvm/java-6-sun-1.6.0.20/jre/lib/rt.jar:/usr/lib/jvm/java-6-sun-1.6.0.20/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-6-sun-1.6.0.20/jre/lib/jsse.jar:/usr/lib/jvm/java-6-sun-1.6.0.20/jre/lib/jce.jar:/usr/lib/jvm/java-6-sun-1.6.0.20/jre/lib/charsets.jar:/usr/lib/jvm/java-6-sun-1.6.0.20/jre/classes"/>
+    <property name="env.PWD" value="/home/devender/personal/github/feed-vis"/>
+    <property name="env.ORACLE_SID" value="orcl10"/>
+    <property name="env.XDG_SESSION_COOKIE" value="655e05044b736477aa6e5ca0491b4cdb-1273771226.167661-1468110874"/>
+    <property name="sun.desktop" value="gnome"/>
+    <property name="env.LANG" value="en_US.utf8"/>
+    <property name="java.vm.specification.vendor" value="Sun Microsystems Inc."/>
+    <property name="java.runtime.version" value="1.6.0_20-b02"/>
+    <property name="env.DEFAULTS_PATH" value="/usr/share/gconf/gnome.default.path"/>
+    <property name="env.DISPLAY" value=":0.0"/>
+    <property name="user.name" value="devender"/>
+    <property name="env._" value="/home/devender/apache-maven-2.0.9/bin/mvn"/>
+    <property name="env.USER" value="devender"/>
+    <property name="env.HISTCONTROL" value="ignoreboth"/>
+    <property name="env.SHELL" value="/bin/bash"/>
+    <property name="env.DEVDB_HOST" value="devdb.db.cj.com"/>
+    <property name="env.DESKTOP_SESSION" value="gnome"/>
+    <property name="env.XDG_DATA_DIRS" value="/usr/share/gnome:/usr/local/share/:/usr/share/"/>
+    <property name="env.NLSPATH" value="/usr/dt/lib/nls/msg/%L/%N.cat"/>
+    <property name="env.PATH" value="/home/devender/apache-ant-1.7.1/bin:/oracle/10g:/oracle/10g/network/admin:/oracle/10g/lib:/lib:/usr/lib:/var/lib/gems/1.8/bin:/home/devender/apache-maven-2.0.9/bin:/home/devender/Perforce/gollapally_workspace/software/bin:/home/devender/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/bin/resin-2.1.17/bin:/oracle/10g/bin"/>
+    <property name="user.language" value="en"/>
+    <property name="env.P4DIFF" value="P4Merge"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-6-sun-1.6.0.20/jre/lib/i386"/>
+    <property name="classworlds.conf" value="/home/devender/apache-maven-2.0.9/bin/m2.conf"/>
+    <property name="env.RESIN_HOME" value="/usr/local/bin/resin-2.1.17"/>
+    <property name="java.version" value="1.6.0_20"/>
+    <property name="user.timezone" value="America/Los_Angeles"/>
+    <property name="env.DBUS_SESSION_BUS_ADDRESS" value="unix:abstract=/tmp/dbus-drYodrKDfP,guid=8c970b8b35638e89ec3dc8164bec34db"/>
+    <property name="sun.arch.data.model" value="32"/>
+    <property name="java.endorsed.dirs" value="/usr/lib/jvm/java-6-sun-1.6.0.20/jre/lib/endorsed"/>
+    <property name="env.ORACLE_BASE" value="/oracle"/>
+    <property name="sun.cpu.isalist" value=""/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="env.SHLVL" value="1"/>
+    <property name="env.P4PORT" value="p4cj.vclk.net:1666"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="env.GNOME_DESKTOP_SESSION_ID" value="this-is-deprecated"/>
+    <property name="java.class.version" value="50.0"/>
+    <property name="env.GDMSESSION" value="gnome"/>
+    <property name="env.GDM_KEYBOARD_LAYOUT" value="us"/>
+    <property name="user.country" value="US"/>
+    <property name="env.GNOME_KEYRING_PID" value="5185"/>
+    <property name="java.home" value="/usr/lib/jvm/java-6-sun-1.6.0.20/jre"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="env.LOGNAME" value="devender"/>
+    <property name="os.version" value="2.6.32-22-generic-pae"/>
+    <property name="env.P4CLIENT" value="gollapally_workspace"/>
+    <property name="path.separator" value=":"/>
+    <property name="java.vm.version" value="16.3-b01"/>
+    <property name="env.P4USER" value="dgollapally"/>
+    <property name="env.P4MERGE" value="P4Merge"/>
+    <property name="env.JAVA_HOME" value="/usr/lib/jvm/java-6-sun"/>
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
+    <property name="env.TERM" value="xterm"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="env.DEVDB_SID" value="devdb"/>
+    <property name="env.DEVDB_PORT" value="1521"/>
+    <property name="env.GDM_LANG" value="en_US.utf8"/>
+    <property name="user.home" value="/home/devender"/>
+    <property name="env.OLDPWD" value="/home/devender/personal/github"/>
+    <property name="java.specification.vendor" value="Sun Microsystems Inc."/>
+    <property name="env.TNS_ADMIN" value="/oracle/10g/network/admin"/>
+    <property name="env.M2_HOME" value="/home/devender/apache-maven-2.0.9"/>
+    <property name="env.WINDOWID" value="77616010"/>
+    <property name="java.vendor.url" value="http://java.sun.com/"/>
+    <property name="java.library.path" value="/usr/lib/jvm/java-6-sun-1.6.0.20/jre/lib/i386/server:/usr/lib/jvm/java-6-sun-1.6.0.20/jre/lib/i386:/usr/lib/jvm/java-6-sun-1.6.0.20/jre/../lib/i386:/oracle/10g/lib:/lib:/usr/lib:/usr/java/packages/lib/i386:/lib:/usr/lib"/>
+    <property name="java.vm.vendor" value="Sun Microsystems Inc."/>
+    <property name="env.P4EDITOR" value="gedit"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="maven.home" value="/home/devender/apache-maven-2.0.9"/>
+    <property name="java.class.path" value="/home/devender/apache-maven-2.0.9/boot/classworlds-1.1.jar"/>
+    <property name="env.XFILESEARCHPATH" value="/usr/dt/app-defaults/%L/Dt"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.vm.specification.version" value="1.0"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="env.HOME" value="/home/devender"/>
+    <property name="env.ANT_HOME" value="/home/devender/apache-ant-1.7.1"/>
+    <property name="surefire.test.class.path" value="/home/devender/personal/github/feed-vis/target/test-classes:/home/devender/personal/github/feed-vis/target/classes:/home/devender/.m2/repository/junit/junit/3.8.1/junit-3.8.1.jar:/home/devender/.m2/repository/rome/rome/1.0/rome-1.0.jar:/home/devender/.m2/repository/jdom/jdom/1.0/jdom-1.0.jar:"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="env.LD_LIBRARY_PATH" value="/usr/lib/jvm/java-6-sun-1.6.0.20/jre/lib/i386/server:/usr/lib/jvm/java-6-sun-1.6.0.20/jre/lib/i386:/usr/lib/jvm/java-6-sun-1.6.0.20/jre/../lib/i386:/oracle/10g/lib:/lib:/usr/lib"/>
+    <property name="env.LS_COLORS" value="rs=0:di=01;34:ln=01;36:hl=44;37:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.lzma=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.rar=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.axa=00;36:*.oga=00;36:*.spx=00;36:*.xspf=00;36:"/>
+    <property name="env.HGUSER" value="devender"/>
+    <property name="java.vendor.url.bug" value="http://java.sun.com/cgi-bin/bugreport.cgi"/>
+    <property name="env.SSH_AUTH_SOCK" value="/tmp/keyring-wiKsqd/ssh"/>
+    <property name="env.MAVEN_OPTS" value="-Xmx1024m -XX:MaxPermSize=128m"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
+    <property name="os.arch" value="i386"/>
+    <property name="java.ext.dirs" value="/usr/lib/jvm/java-6-sun-1.6.0.20/jre/lib/ext:/usr/java/packages/lib/ext"/>
+    <property name="user.dir" value="/home/devender/personal/github/feed-vis"/>
+    <property name="env.XAUTHORITY" value="/var/run/gdm/auth-for-devender-bWpSkP/database"/>
+    <property name="env.MANDATORY_PATH" value="/usr/share/gconf/gnome.mandatory.path"/>
+    <property name="env.SPEECHD_PORT" value="7560"/>
+    <property name="env.GTK_MODULES" value="canberra-gtk-module"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) Server VM"/>
+    <property name="env.COLORTERM" value="gnome-terminal"/>
+    <property name="basedir" value="/home/devender/personal/github/feed-vis"/>
+    <property name="env.P4PASSWD" value="coke123!"/>
+    <property name="env.ORBIT_SOCKETDIR" value="/tmp/orbit-devender"/>
+    <property name="env.M2" value="/home/devender/apache-maven-2.0.9/bin"/>
+    <property name="env.USERNAME" value="devender"/>
+    <property name="env.cj_javaVersion" value="jdk1.6.0_13"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="env.GPG_AGENT_INFO" value="/tmp/seahorse-e9UlVZ/S.gpg-agent:5247:1"/>
+    <property name="java.specification.version" value="1.6"/>
+    <property name="env.GNOME_KEYRING_CONTROL" value="/tmp/keyring-wiKsqd"/>
+    <property name="env.XDG_CONFIG_DIRS" value="/etc/xdg/xdg-gnome:/etc/xdg"/>
+    <property name="env.LESSCLOSE" value="/usr/bin/lesspipe %s %s"/>
+  </properties>
+  <testcase time="0.003" classname="com.devender.AppTest" name="testApp"/>
+</testsuite>
