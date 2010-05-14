@@ -8,7 +8,7 @@
     <resources>
         <!-- Application Resources -->
         <j2se version="1.6+"  href="http://java.sun.com/products/autodl/j2se"/>
-        <jar href="feeds.jar" main="false" />
+        <jar href="http://github.com/devender/feed-vis/raw/gh-pages/feeds.jar" main="false" />
     </resources>
     <applet-desc 
          name="Feed Visualizer Applet"
