@@ -8,7 +8,7 @@
     <resources>
         <!-- Application Resources -->
         <j2se version="1.6+"  href="http://java.sun.com/products/autodl/j2se"/>
-        <jar href="feed-vis-1.0-SNAPSHOT-jar-with-dependencies.jar" main="false" />
+        <jar href="feeds.jar" main="false" />
     </resources>
     <applet-desc 
          name="Feed Visualizer Applet"
