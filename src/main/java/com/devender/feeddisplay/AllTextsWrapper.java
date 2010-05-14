@@ -42,18 +42,11 @@ public class AllTextsWrapper {
 	}
 
 	public void mouseClick(Point point, Dimension size) {
-		System.out.println("mouse click");
+		System.out.println("mouse click @ "+ point.x + " "+ point.y);
 		for (TextLayoutWrapper layoutWrapper : list) {
-			Point2D origin = computeLayoutOrigin(size, layoutWrapper.getTextLayout());
-			// Compute the mouse click location relative to
-			// textLayout's origin.
-			float clickX = (float) (point.getX() - origin.getX());
-			float clickY = (float) (point.getY() - origin.getY());
-
-			// Get the character position of the mouse click.
-			TextHitInfo currentHit = layoutWrapper.getTextLayout().hitTestChar(clickX, clickY);
-			int insertionIndex = currentHit.getInsertionIndex();
-			System.out.println(currentHit.getInsertionIndex());
+			System.out.println(layoutWrapper.getTextLayout().getOutline(null).getBounds2D().contains(point.x, point.y));
+			boolean contains = layoutWrapper.getTextLayout().getOutline(null).contains(point);
+			System.out.println(contains);
 
 		}
 	}
