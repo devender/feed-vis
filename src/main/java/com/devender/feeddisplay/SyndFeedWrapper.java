@@ -48,6 +48,7 @@ public class SyndFeedWrapper {
 		return System.currentTimeMillis() - lastUpdated > howOften;
 	}
 
+	@SuppressWarnings("unchecked")
 	public void update() {
 		entries = syndFeed.getEntries();
 		lastUpdated = System.currentTimeMillis();

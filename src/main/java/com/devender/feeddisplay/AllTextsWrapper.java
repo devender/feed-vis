@@ -1,15 +1,18 @@
 package com.devender.feeddisplay;
 
+import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics2D;
 import java.awt.GraphicsEnvironment;
+import java.awt.Point;
+import java.awt.font.TextHitInfo;
 import java.awt.font.TextLayout;
+import java.awt.geom.Point2D;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-
 
 public class AllTextsWrapper {
 	private static final int NUMBER_OF_LINES_TO_SHOW = 3;
@@ -22,8 +25,9 @@ public class AllTextsWrapper {
 	public AllTextsWrapper() {
 		font = new FontFinder().chooseFont();
 		feeds = new Feeds();
-		// ------------------------------------------------
-		String[] strings = { "http://news.ycombinator.com/rss", "http://www.reddit.com/r/programming/.rss" };
+		// -----------------------TODO -------------------------
+		String[] strings = { "http://news.ycombinator.com/rss",
+				"http://www.reddit.com/r/programming/.rss" };
 		for (String string : strings) {
 			URL feedUrl;
 			try {
@@ -35,6 +39,32 @@ public class AllTextsWrapper {
 		}
 		// ------------------------------------------------
 		random = new Random();
+	}
+
+	public void mouseClick(Point point, Dimension size) {
+		System.out.println("mouse click");
+		for (TextLayoutWrapper layoutWrapper : list) {
+			Point2D origin = computeLayoutOrigin(size, layoutWrapper.getTextLayout());
+			// Compute the mouse click location relative to
+			// textLayout's origin.
+			float clickX = (float) (point.getX() - origin.getX());
+			float clickY = (float) (point.getY() - origin.getY());
+
+			// Get the character position of the mouse click.
+			TextHitInfo currentHit = layoutWrapper.getTextLayout().hitTestChar(clickX, clickY);
+			int insertionIndex = currentHit.getInsertionIndex();
+			System.out.println(currentHit.getInsertionIndex());
+
+		}
+	}
+
+	private Point2D computeLayoutOrigin(Dimension size, TextLayout textLayout) {
+		// Dimension size = getPreferredSize();
+		Point2D.Float origin = new Point2D.Float();
+
+		origin.x = (float) (size.width - textLayout.getAdvance()) / 2;
+		origin.y = (float) (size.height - textLayout.getDescent() + textLayout.getAscent()) / 2;
+		return origin;
 	}
 
 	/**
@@ -63,8 +93,10 @@ public class AllTextsWrapper {
 		}
 	}
 
-	private TextLayoutWrapper createNewTextLayoutWrapper(final Graphics2D g2, final float boardWidth, final float boardHeight) {
-		return new TextLayoutWrapper(new TextLayout(feeds.getNextItemToRead().getTitle(), font, g2.getFontRenderContext()), Math.round(boardWidth), getNextY(boardHeight));
+	private TextLayoutWrapper createNewTextLayoutWrapper(final Graphics2D g2,
+			final float boardWidth, final float boardHeight) {
+		return new TextLayoutWrapper(new TextLayout(feeds.getNextItemToRead().getTitle(), font, g2
+				.getFontRenderContext()), Math.round(boardWidth), getNextY(boardHeight));
 	}
 
 	private float getNextY(final float boardHeight) {
