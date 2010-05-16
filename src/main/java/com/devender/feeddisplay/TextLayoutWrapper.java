@@ -20,10 +20,6 @@ public class TextLayoutWrapper {
 		this.syndEntry = syndEntry;
 	}
 
-	public TextLayout getTextLayout() {
-		return textLayout;
-	}
-
 	public boolean isFinishedScrollingText() {
 		return finishedScrollingText;
 	}

@@ -12,39 +12,15 @@ public class SyndFeedWrapper {
 	private long howOften;
 	private int lastEntryRead = 0;
 
-	public SyndFeed getSyndFeed() {
-		return syndFeed;
-	}
-
 	public void setSyndFeed(SyndFeed syndFeed) {
 		this.syndFeed = syndFeed;
-	}
-
-	public List<SyndEntry> getEntries() {
-		return entries;
-	}
-
-	public void setEntries(List<SyndEntry> entries) {
-		this.entries = entries;
-	}
-
-	public long getLastUpdated() {
-		return lastUpdated;
-	}
-
-	public void setLastUpdated(long lastUpdated) {
-		this.lastUpdated = lastUpdated;
-	}
-
-	public long getHowOften() {
-		return howOften;
 	}
 
 	public void setHowOften(long howOften) {
 		this.howOften = howOften;
 	}
 
-	public boolean needsToBeUpdated() {
+	private boolean needsToBeUpdated() {
 		return System.currentTimeMillis() - lastUpdated > howOften;
 	}
 
@@ -54,7 +30,7 @@ public class SyndFeedWrapper {
 		for (SyndEntry entry : entries) {
 			entry.setSource(syndFeed);
 		}
-		
+
 		lastUpdated = System.currentTimeMillis();
 	}
 
