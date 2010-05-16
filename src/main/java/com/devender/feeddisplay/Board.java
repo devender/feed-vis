@@ -29,7 +29,7 @@ public class Board extends JPanel implements ActionListener {
 
 	public Board() {
 		super();
-		setBackground(Color.WHITE);
+		setBackground(Color.BLACK);
 		setDoubleBuffered(true);
 		timer = new Timer(SPEED, this);
 		timer.start();
@@ -58,7 +58,7 @@ public class Board extends JPanel implements ActionListener {
 		super.paint(g);
 		Graphics2D g2 = (Graphics2D) g;
 		g2.setRenderingHints(rh);
-		g2.setColor(Color.BLACK);
+		g2.setColor(Color.LIGHT_GRAY);
 		allTextsWrapper.draw(g2, (float) getSize(dimensionOfBoard).getWidth(), (float) getSize(dimensionOfBoard).getHeight());
 		Toolkit.getDefaultToolkit().sync();
 		g.dispose();

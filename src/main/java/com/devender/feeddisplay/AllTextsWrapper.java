@@ -6,7 +6,6 @@ import java.awt.Graphics2D;
 import java.awt.GraphicsEnvironment;
 import java.awt.Point;
 import java.awt.font.TextLayout;
-import java.awt.geom.Point2D;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -19,7 +18,7 @@ public class AllTextsWrapper {
 	private final Random random;
 	private final int numberOfLines;
 	private List<TextLayoutWrapper> list;
-	private static final int MIN_V_DISTANCE = 10;
+	private static final int MIN_V_DISTANCE = 20;
 
 	public AllTextsWrapper(int numberOfLines) {
 		this.numberOfLines = numberOfLines;
