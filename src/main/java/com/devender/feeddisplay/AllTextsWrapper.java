@@ -12,6 +12,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import com.sun.syndication.feed.synd.SyndEntry;
+
 public class AllTextsWrapper {
 	private final Font font;
 	private final Feeds feeds;
@@ -41,12 +43,10 @@ public class AllTextsWrapper {
 	}
 
 	public void mouseClick(Point point, Dimension size) {
-		System.out.println("mouse click @ "+ point.x + " "+ point.y);
 		for (TextLayoutWrapper layoutWrapper : list) {
-			System.out.println(layoutWrapper.getTextLayout().getOutline(null).getBounds2D().contains(point.x, point.y));
-			boolean contains = layoutWrapper.getTextLayout().getOutline(null).contains(point);
-			System.out.println(contains);
-
+			if (layoutWrapper.contains(point)) {
+				System.out.println(layoutWrapper.getSyndEntry().getTitle());
+			}
 		}
 	}
 
@@ -78,8 +78,10 @@ public class AllTextsWrapper {
 
 	private TextLayoutWrapper createNewTextLayoutWrapper(final Graphics2D g2,
 			final float boardWidth, final float boardHeight) {
-		return new TextLayoutWrapper(new TextLayout(feeds.getNextItemToRead().getTitle(), font, g2
-				.getFontRenderContext()), Math.round(boardWidth), getNextY(boardHeight));
+		SyndEntry syndEntry = feeds.getNextItemToRead();
+
+		return new TextLayoutWrapper(new TextLayout(syndEntry.getTitle(), font, g2
+				.getFontRenderContext()), Math.round(boardWidth), getNextY(boardHeight), syndEntry);
 	}
 
 	private float getNextY(final float boardHeight) {
@@ -142,5 +144,10 @@ public class AllTextsWrapper {
 			}
 			return false;
 		}
+	}
+
+	public void mouseEntered(Point point, Dimension preferredSize) {
+		// TODO Auto-generated method stub
+		
 	}
 }

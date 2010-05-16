@@ -42,6 +42,12 @@ public class Board extends JPanel implements ActionListener {
 				super.mouseClicked(e);
 				allTextsWrapper.mouseClick(e.getPoint(),getPreferredSize());
 			}
+			
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				super.mouseEntered(e);
+				allTextsWrapper.mouseEntered(e.getPoint(),getPreferredSize());
+			}
 		});
 	}
 
