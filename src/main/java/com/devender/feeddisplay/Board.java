@@ -14,6 +14,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.List;
 
 import javax.swing.JPanel;
 import javax.swing.Timer;
@@ -25,6 +26,7 @@ public class Board extends JPanel implements ActionListener {
 	private final RenderingHints rh;
 	private final AllTextsWrapper allTextsWrapper;
 	private final Feeds feeds;
+	private final Preferences preferences;
 
 	/**
 	 * if this is not used, every time getSize is called a new dimension object
@@ -37,11 +39,12 @@ public class Board extends JPanel implements ActionListener {
 		setBackground(Color.BLACK);
 		setDoubleBuffered(true);
 		setFocusable(true);
-		
+
 		feeds = new Feeds();
-		// -----------------------TODO -------------------------
-		String[] strings = { "http://news.ycombinator.com/rss",
-				"http://www.reddit.com/r/programming/.rss" };
+		preferences = new Preferences();
+
+		List<String> strings = preferences.init();
+
 		for (String string : strings) {
 			URL feedUrl;
 			try {
@@ -51,14 +54,13 @@ public class Board extends JPanel implements ActionListener {
 				e.printStackTrace();
 			}
 		}
-		// ------------------------------------------------
 		timer = new Timer(SPEED, this);
 		timer.start();
 		rh = new RenderingHints(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 		rh.put(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
-		
-		allTextsWrapper = new AllTextsWrapper(3,feeds);
-		
+
+		allTextsWrapper = new AllTextsWrapper(3, feeds);
+
 		this.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -70,11 +72,27 @@ public class Board extends JPanel implements ActionListener {
 		this.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent e) {
-				if (e.getKeyCode() == KeyEvent.VK_E) {
-					System.out.println("pressed edit");
+				switch (e.getKeyCode()) {
+				case KeyEvent.VK_A:
+					showAdd();
+					break;
+
+				case KeyEvent.VK_D:
+					showDelete();
+					break;
 				}
 			}
 		});
+	}
+
+	private void showAdd() {
+		// TODO Auto-generated method stub
+
+	}
+
+	private void showDelete() {
+		// TODO Auto-generated method stub
+
 	}
 
 	public void start() {
