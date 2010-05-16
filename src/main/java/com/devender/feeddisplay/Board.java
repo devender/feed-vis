@@ -8,6 +8,9 @@ import java.awt.RenderingHints;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -31,6 +34,8 @@ public class Board extends JPanel implements ActionListener {
 		super();
 		setBackground(Color.BLACK);
 		setDoubleBuffered(true);
+		setFocusable(true);
+
 		timer = new Timer(SPEED, this);
 		timer.start();
 		rh = new RenderingHints(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
@@ -41,6 +46,15 @@ public class Board extends JPanel implements ActionListener {
 			public void mouseClicked(MouseEvent e) {
 				super.mouseClicked(e);
 				allTextsWrapper.mouseClick(e.getPoint(), getPreferredSize());
+			}
+		});
+
+		this.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyPressed(KeyEvent e) {
+				if (e.getKeyCode() == KeyEvent.VK_E) {
+					System.out.println("pressed edit");
+				}
 			}
 		});
 	}
