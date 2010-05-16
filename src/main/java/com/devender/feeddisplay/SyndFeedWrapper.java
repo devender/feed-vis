@@ -51,6 +51,10 @@ public class SyndFeedWrapper {
 	@SuppressWarnings("unchecked")
 	public void update() {
 		entries = syndFeed.getEntries();
+		for (SyndEntry entry : entries) {
+			entry.setSource(syndFeed);
+		}
+		
 		lastUpdated = System.currentTimeMillis();
 	}
 

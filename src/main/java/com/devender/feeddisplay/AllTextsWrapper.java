@@ -79,8 +79,12 @@ public class AllTextsWrapper {
 	private TextLayoutWrapper createNewTextLayoutWrapper(final Graphics2D g2,
 			final float boardWidth, final float boardHeight) {
 		SyndEntry syndEntry = feeds.getNextItemToRead();
-
-		return new TextLayoutWrapper(new TextLayout(syndEntry.getTitle(), font, g2
+		StringBuilder builder = new StringBuilder();
+		builder.append(syndEntry.getTitle());
+		builder.append(" - ");
+		builder.append(syndEntry.getSource().getTitle());
+		
+		return new TextLayoutWrapper(new TextLayout(builder.toString(), font, g2
 				.getFontRenderContext()), Math.round(boardWidth), getNextY(boardHeight), syndEntry);
 	}
 
