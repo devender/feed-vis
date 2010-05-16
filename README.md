@@ -15,4 +15,4 @@ Future
 
 ScreenShot
 ------------
-![ScreenShot](http://github.com/devender/feed-vis/raw/gh-pages/screenshot.tiff)
+![ScreenShot](http://github.com/devender/feed-vis/raw/gh-pages/screenshot.png)
