@@ -10,3 +10,4 @@ Features
 Future
 -------
 *   Comes preloaded with Hacker News and Reddit/programming, can only be changed if you have the source code, I would like to add a feature so that user can edit the feeds.
+*   The number of stories shown is set to 3, this should be something that the user can change.
