@@ -5,7 +5,6 @@ import java.awt.Font;
 import java.awt.Graphics2D;
 import java.awt.GraphicsEnvironment;
 import java.awt.Point;
-import java.awt.font.TextHitInfo;
 import java.awt.font.TextLayout;
 import java.awt.geom.Point2D;
 import java.net.MalformedURLException;
@@ -15,14 +14,15 @@ import java.util.List;
 import java.util.Random;
 
 public class AllTextsWrapper {
-	private static final int NUMBER_OF_LINES_TO_SHOW = 3;
 	private final Font font;
 	private final Feeds feeds;
 	private final Random random;
+	private final int numberOfLines;
 	private List<TextLayoutWrapper> list;
 	private static final int MIN_V_DISTANCE = 10;
 
-	public AllTextsWrapper() {
+	public AllTextsWrapper(int numberOfLines) {
+		this.numberOfLines = numberOfLines;
 		font = new FontFinder().chooseFont();
 		feeds = new Feeds();
 		// -----------------------TODO -------------------------
@@ -51,15 +51,6 @@ public class AllTextsWrapper {
 		}
 	}
 
-	private Point2D computeLayoutOrigin(Dimension size, TextLayout textLayout) {
-		// Dimension size = getPreferredSize();
-		Point2D.Float origin = new Point2D.Float();
-
-		origin.x = (float) (size.width - textLayout.getAdvance()) / 2;
-		origin.y = (float) (size.height - textLayout.getDescent() + textLayout.getAscent()) / 2;
-		return origin;
-	}
-
 	/**
 	 * For each text in the list, checks to see if it has scrolled off the
 	 * board, if so resets it and assigns a new y cord
@@ -71,7 +62,7 @@ public class AllTextsWrapper {
 	public void draw(final Graphics2D g2, final float boardWidth, final float boardHeight) {
 		if (list == null) {
 			list = new ArrayList<TextLayoutWrapper>();
-			for (int i = 0; i < NUMBER_OF_LINES_TO_SHOW; i++) {
+			for (int i = 0; i < numberOfLines; i++) {
 				list.add(createNewTextLayoutWrapper(g2, boardWidth, boardHeight));
 			}
 		}

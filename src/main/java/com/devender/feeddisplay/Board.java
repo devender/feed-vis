@@ -35,7 +35,7 @@ public class Board extends JPanel implements ActionListener {
 		timer.start();
 		rh = new RenderingHints(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 		rh.put(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
-		allTextsWrapper = new AllTextsWrapper();
+		allTextsWrapper = new AllTextsWrapper(3);
 		this.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
