@@ -16,5 +16,5 @@
          width="800"
          height="300">
      </applet-desc>
-     <update check="background"/>
+     <update check="always"/>
 </jnlp>
