@@ -1,6 +1,7 @@
 A very simple Feed Visualizer
 =============================
 
+To use please click on this [link](http://github.com/devender/feed-vis/raw/gh-pages/feed-vis.jnlp), it will download a JNLP file which can be opened as a Java Web start app. 
 Features
 --------
 *   will handle rss and atom feeds
