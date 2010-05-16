@@ -1,6 +1,5 @@
 package com.devender.feeddisplay;
 
-import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics2D;
 import java.awt.GraphicsEnvironment;
@@ -15,41 +14,30 @@ import java.util.Random;
 import com.sun.syndication.feed.synd.SyndEntry;
 
 public class AllTextsWrapper {
+	private static final int MIN_V_DISTANCE = 20;
+
 	private final Font font;
 	private final Feeds feeds;
 	private final Random random;
 	private final int numberOfLines;
-	private List<TextLayoutWrapper> list;
-	private static final int MIN_V_DISTANCE = 20;
 
-	public AllTextsWrapper(int numberOfLines) {
+	private List<TextLayoutWrapper> list;
+
+	public AllTextsWrapper(int numberOfLines, Feeds feeds) {
 		this.numberOfLines = numberOfLines;
 		font = new FontFinder().chooseFont();
-		feeds = new Feeds();
-		// -----------------------TODO -------------------------
-		String[] strings = { "http://news.ycombinator.com/rss",
-				"http://www.reddit.com/r/programming/.rss" };
-		for (String string : strings) {
-			URL feedUrl;
-			try {
-				feedUrl = new URL(string);
-				feeds.addNewFeedUrl(feedUrl, 1000 * 60 * 60);
-			} catch (MalformedURLException e) {
-				e.printStackTrace();
-			}
-		}
-		// ------------------------------------------------
+		this.feeds = feeds;	
 		random = new Random();
 	}
 
-	public void mouseClick(Point point, Dimension size) {
+	public void mouseClick(final Point point) {
 		for (TextLayoutWrapper layoutWrapper : list) {
 			if (layoutWrapper.contains(point)) {
 				BareBonesBrowserLaunch.openURL(layoutWrapper.getSyndEntry().getLink());
 			}
 		}
 	}
-	
+
 	/**
 	 * For each text in the list, checks to see if it has scrolled off the
 	 * board, if so resets it and assigns a new y cord
@@ -78,12 +66,12 @@ public class AllTextsWrapper {
 
 	private TextLayoutWrapper createNewTextLayoutWrapper(final Graphics2D g2,
 			final float boardWidth, final float boardHeight) {
-		SyndEntry syndEntry = feeds.getNextItemToRead();
-		StringBuilder builder = new StringBuilder();
+		final SyndEntry syndEntry = feeds.getNextItemToRead();
+		final StringBuilder builder = new StringBuilder();
 		builder.append(syndEntry.getTitle());
 		builder.append(" - ");
 		builder.append(syndEntry.getSource().getTitle());
-		
+
 		return new TextLayoutWrapper(new TextLayout(builder.toString(), font, g2
 				.getFontRenderContext()), Math.round(boardWidth), getNextY(boardHeight), syndEntry);
 	}
@@ -149,6 +137,4 @@ public class AllTextsWrapper {
 			return false;
 		}
 	}
-
-	
 }
