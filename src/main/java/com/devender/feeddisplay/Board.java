@@ -40,13 +40,7 @@ public class Board extends JPanel implements ActionListener {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				super.mouseClicked(e);
-				allTextsWrapper.mouseClick(e.getPoint(),getPreferredSize());
-			}
-			
-			@Override
-			public void mouseEntered(MouseEvent e) {
-				super.mouseEntered(e);
-				allTextsWrapper.mouseEntered(e.getPoint(),getPreferredSize());
+				allTextsWrapper.mouseClick(e.getPoint(), getPreferredSize());
 			}
 		});
 	}
@@ -65,7 +59,8 @@ public class Board extends JPanel implements ActionListener {
 		Graphics2D g2 = (Graphics2D) g;
 		g2.setRenderingHints(rh);
 		g2.setColor(Color.LIGHT_GRAY);
-		allTextsWrapper.draw(g2, (float) getSize(dimensionOfBoard).getWidth(), (float) getSize(dimensionOfBoard).getHeight());
+		allTextsWrapper.draw(g2, (float) getSize(dimensionOfBoard).getWidth(), (float) getSize(
+				dimensionOfBoard).getHeight());
 		Toolkit.getDefaultToolkit().sync();
 		g.dispose();
 	}

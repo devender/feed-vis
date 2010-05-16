@@ -45,11 +45,11 @@ public class AllTextsWrapper {
 	public void mouseClick(Point point, Dimension size) {
 		for (TextLayoutWrapper layoutWrapper : list) {
 			if (layoutWrapper.contains(point)) {
-				System.out.println(layoutWrapper.getSyndEntry().getTitle());
+				BareBonesBrowserLaunch.openURL(layoutWrapper.getSyndEntry().getLink());
 			}
 		}
 	}
-
+	
 	/**
 	 * For each text in the list, checks to see if it has scrolled off the
 	 * board, if so resets it and assigns a new y cord
@@ -146,8 +146,5 @@ public class AllTextsWrapper {
 		}
 	}
 
-	public void mouseEntered(Point point, Dimension preferredSize) {
-		// TODO Auto-generated method stub
-		
-	}
+	
 }
