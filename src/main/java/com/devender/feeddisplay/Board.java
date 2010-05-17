@@ -16,6 +16,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
 
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
@@ -46,13 +47,7 @@ public class Board extends JPanel implements ActionListener {
 		List<String> strings = preferences.init();
 
 		for (String string : strings) {
-			URL feedUrl;
-			try {
-				feedUrl = new URL(string);
-				feeds.addNewFeedUrl(feedUrl, 1000 * 60 * 60);
-			} catch (MalformedURLException e) {
-				e.printStackTrace();
-			}
+			addToFeeds(string);
 		}
 		timer = new Timer(SPEED, this);
 		timer.start();
@@ -85,14 +80,22 @@ public class Board extends JPanel implements ActionListener {
 		});
 	}
 
-	private void showAdd() {
-		// TODO Auto-generated method stub
+	private void addToFeeds(String string) {
+		URL feedUrl;
+		try {
+			feedUrl = new URL(string);
+			feeds.addNewFeedUrl(feedUrl, 1000 * 60 * 60);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 
+	private void showAdd() {
+		String s = JOptionPane.showInputDialog("Enter the feed url");
+		addToFeeds(s);
 	}
 
 	private void showDelete() {
-		// TODO Auto-generated method stub
-
 	}
 
 	public void start() {
